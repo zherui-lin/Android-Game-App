@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PageCatalogActivity">
+
+    <edu.stanford.cs108.bunnyworld.PageCatalogView
+        android:id="@+id/page_catalog_view"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="0.7"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="0.15"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/create"
+            android:text="CREATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCreatePage"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/edit"
+            android:text="EDIT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onEditPage"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/undo"
+            android:text="UNDO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onUndoPages"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/main_back"
+            android:text="BACK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onBack"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="0.15"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/set_first_page"
+            android:text="SET FIRST PAGE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSetFirstPage"
+            />
+
+        <Button
+            android:id="@+id/delete"
+            android:text="DELETE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeletePage"
+            />
+
+        <Button
+            android:id="@+id/change_name"
+            android:text="CHANGE NAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onChangePageName"
+            />
+
+        <EditText
+            android:id="@+id/page_new_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

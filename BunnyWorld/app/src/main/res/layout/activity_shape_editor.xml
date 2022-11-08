@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ShapeEditorActivity">
+
+    <edu.stanford.cs108.bunnyworld.ShapeEditorView
+        android:id="@+id/shapeEditView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shapes:"
+                app:autoSizeTextType="uniform"
+                />
+
+            <Spinner
+                android:id="@+id/typeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X: "
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/leftBound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:ems="3"
+                android:text="1.0"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y: "
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/upBound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:ems="3"
+                android:text="1.0"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Width: "
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/widthBound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:ems="3"
+                android:text="200.0"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height: "
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/heightBound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:ems="3"
+                android:text="200.0"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/nameEdit"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/copyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPY"
+                android:onClick="onCopy"
+                app:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/pasteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASTE"
+                android:onClick="onPaste"
+                app:autoSizeTextType="uniform"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text:"
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/textShape"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FontSize:"
+                app:autoSizeTextType="uniform"/>
+
+            <EditText
+                android:id="@+id/fontEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="3"
+                android:maxLines="1"
+                android:textSize="10sp"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Font:"
+                app:autoSizeTextType="uniform" />
+
+            <Spinner
+                android:id="@+id/fontNameSpinner"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                app:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Style:"
+                app:autoSizeTextType="uniform" />
+
+            <Spinner
+                android:id="@+id/fontStyleSpinner"
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                app:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/scriptButton"
+                android:text="SCRIPT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onEditScript"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/red_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red:"
+                app:autoSizeTextType="uniform"/>
+
+            <SeekBar
+                android:id="@+id/red_bar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/red_label"
+                android:max="255"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/green_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green:"
+                app:autoSizeTextType="uniform" />
+
+            <SeekBar
+                android:id="@+id/green_bar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/green_label"
+                android:max="255"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/blue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue:"
+                app:autoSizeTextType="uniform" />
+
+            <SeekBar
+                android:id="@+id/blue_bar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/blue_label"
+                android:max="255"
+                android:progress="0" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/movableCheck"
+                android:layout_width="0dp"
+                android:layout_weight="1.05"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Movable"
+                android:textSize="8sp"
+                app:autoSizeTextType="uniform" />
+
+            <CheckBox
+                android:id="@+id/visibleCheck"
+                android:layout_width="0dp"
+                android:layout_weight="0.9"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Visible"
+                android:textSize="8sp"
+                app:autoSizeTextType="uniform" />
+
+            <CheckBox
+                android:id="@+id/animationCheck"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Animation"
+                android:textSize="8sp"
+                app:autoSizeTextType="uniform" />
+
+            <Button
+                android:id="@+id/addButton"
+                android:text="ADD"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onAdd"
+                app:autoSizeTextType="uniform" />
+
+            <Button
+                android:id="@+id/updateShape"
+                android:text="UPDATE"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onUpdateShape"
+                app:autoSizeTextType="uniform" />
+
+            <Button
+                android:id="@+id/delete"
+                android:text="DELETE"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onDelete"
+                app:autoSizeTextType="uniform"/>
+
+
+            <Button
+                android:id="@+id/undo"
+                android:text="UNDO"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onUndo"
+                app:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/back"
+                android:text="BACK"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onBack"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

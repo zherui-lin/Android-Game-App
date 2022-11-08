@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bunny World!"/>
+
+    <Button
+        android:id="@+id/editor_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editor Mode"
+        android:onClick="onEditor"/>
+
+    <Button
+        android:id="@+id/player_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Mode"
+        android:onClick="onPlayer"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Bunny World!"/>
+
+
+
+
+
+</LinearLayout>
